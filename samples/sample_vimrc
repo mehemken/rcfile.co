@@ -1,0 +1,89 @@
+" email:    mehemken@gmail.com
+" web:      mehemken.io
+" :so %
+" % stands for current file
+""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" "call vundle#begin('~/some/path/here')
+" " let Vundle manage Vundle, required
+" Plugin 'rust-lang/rust.vim'
+" 
+" 
+" call vundle#end()            " required
+"
+" :PluginList       - lists configured plugins
+" :PluginUpdate
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+"
+" Put your non-Plugin stuff after this line
+" Vundle (end)
+
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+
+set nu
+set hlsearch
+
+	au!
+augroup end
+"split navigations
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-h> <c-w><c-h>
+au bufnewfile,bufread *.py
+    \ set softtabstop=4 |
+    \ set textwidth=79 |
+    \ set autoindent |
+    \ set rnu |
+au bufnewfile,bufread *.md
+    \ set rnu |
+    \ set shiftwidth=4 |
+    \ set colorcolumn=80 |
+
+    \ set autoindent |
+    \ set expandtab |
+    \ set softtabstop=4 |
+
+    \ set shiftwidth=4 |
+
+    \ set shiftwidth=4 |
+
+    \ set shiftwidth=4 |
+
+    \ set autoindent |
+    \ set rnu |
+au bufnewfile,bufread *.c  
+    \ set shiftwidth=4 |
+
+    \ set tabstop=4 |
+    \ set shiftwidth=4 |
+    \ set autoindent |
+    \ set rnu |
+au bufnewfile,bufread *.json
+    \ set softtabstop=4 |
+    \ set expandtab |
+    \ set fileformat=unix |
+
+autocmd filetype yaml 
+    \ set rnu |
+
+highlight badwhitespace ctermbg=red guibg=darkred
+au bufread,bufnewfile *.py,*.pyw,*.c,*.h match badwhitespace /\s\+$/
+set encoding=utf-8
+set splitbelow
+
+nnoremap ; :
+nnoremap 0 ^
+inoremap <tab> <esc>`^
+
+set wrap
+set nolist " list diables linebreak
+"from a youtube video
+set wildmenu    " search for a file from substring
+let g:netrw_liststyle = 3
+"snippets
+nnoremap \Dockerfile :-1read ~/.vim/.skeleton.Dockerfile<CR>
+nnoremap \flask :-1read ~/.vim/.skeleton.flask<CR>
+nnoremap \bb :read ~/.vim/.skeleton.j2block<CR>
+nnoremap \argp :-1read ~/.vim/.skeleton.argparse<CR>
