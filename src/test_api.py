@@ -2,9 +2,7 @@ import pytest
 import requests
 import subprocess
 import time
-
 from threading import Thread
-from hugd import rcfile
 
 
 @pytest.fixture
