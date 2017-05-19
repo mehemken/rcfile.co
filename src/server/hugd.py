@@ -11,4 +11,4 @@ def rcfile():
     return rcfile
 
 if __name__ == '__main__':
-    add.interface.cli()
+    rcfile.interface.get()
