@@ -1,18 +1,23 @@
 import pytest
 import requests
+import subprocess
+import time
 
 from threading import Thread
-from server import server
+from hugd import rcfile
+
 
 @pytest.fixture
 def server(request):
     """Run the falcon server in a new thread"""
     def run_server():
-        rcfile.interface.get()
+        p1 = 'hug -f hugd.py'.split()
+        subprocess.Popen(p1)
 
     t = Thread(target=run_server)
     t.daemon = True
     t.start()
+    time.sleep(.123)
     return server
 
 
